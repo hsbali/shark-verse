@@ -4,11 +4,17 @@ const AboutSection = () => {
   return (
     <section
       id={`${styles['about']}`}
-      className={`${styles['bg-img']} min-h-screen w-full flex items-center`}
+      className={`${styles['bg-img']} min-h-screen w-full flex items-center relative`}
     >
-      <div className="text-white text-center md:w-2/3 mx-auto p-4 z-50">
-        <h2 className="text-6xl font-bold mb-14">About SharkVerse</h2>
-        <p className="mb-6">
+        <div className='absolute left-0 bottom-0 z-20'>
+            <img src="/images/side-patterns/start/1.png" style={{  width: '500px' }} />
+        </div>
+        <div className='absolute right-0 bottom-0 z-20'>
+            <img src="/images/side-patterns/start/2.png" style={{  width: '500px' }} />
+        </div>
+      <div className="text-white text-center md:w-2/3 mx-auto px-4 py-24 z-30">
+        <h2 className="text-6xl font-semibold mb-14">About SharkVerse</h2>
+        <p className="text-xl mb-6">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Consequat
           id porta nibh venenatis. Donec massa sapien faucibus et molestie ac
@@ -21,7 +27,7 @@ const AboutSection = () => {
           In pellentesque massa placerat duis. Venenatis lectus magna fringilla
           urna.
         </p>
-        <p className='mb-14'>
+        <p className='text-xl mb-14'>
           Sagittis purus sit amet volutpat consequat mauris nunc congue nisi.
           Scelerisque eu ultrices vitae auctor. Nunc consequat interdum varius
           sit amet mattis vulputate. Ullamcorper dignissim cras tincidunt

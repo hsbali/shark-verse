@@ -21,3 +21,11 @@
       background-size: cover;
   }
 }
+
+#sharks {
+  &.bg-img {
+      background-image: url('/images/backgrounds/bg-dark.png');
+      background-position: center;
+      background-size: cover;
+  }
+}
