@@ -1,8 +1,4 @@
 #hero-section {
-  // &.bg-img {
-  //     background-image: url('/videos/bg-gif.gif');
-  //     background-size: 100vh 100%;
-  // }
   & #bg-video {
     height: 100%;
     width: 100%;
@@ -15,5 +11,13 @@
     box-shadow: 0px 4px 45px rgba(19, 124, 174, 0.28);
     backdrop-filter: blur(8px);
     /* Note: backdrop-filter has minimal browser support */ 
+  }
+}
+
+#about {
+  &.bg-img {
+      background-image: url('/images/backgrounds/bg-blue-2.png');
+      background-position: center;
+      background-size: cover;
   }
 }
