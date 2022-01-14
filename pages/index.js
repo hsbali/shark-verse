@@ -1,7 +1,15 @@
 import HeroSection from "../components/LandingPage/HeroSection";
+import Navbar from "../components/shared/Navbar";
 
 export default function Home() {
   return (
-    <HeroSection />
+    <>
+    <header>
+      <Navbar />
+    </header>
+    <main>
+      <HeroSection />
+    </main>
+    </>
   )
 }

@@ -1,16 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 import styles from '../../styles/LandingPage.module.scss';
 
 const HeroSection = () => {
-    const [contentHeight, setContentHeight] = useState(null);
-    const content = useRef()
-
-    useEffect(() => {
-        if (content.current) {setContentHeight(content.current.offsetHeight); console.log(content.current.offsetHeight)}
-    }, [content.current])
-
   return (
     <section
       id={styles['hero-section']}
@@ -21,12 +13,11 @@ const HeroSection = () => {
         autoPlay
         loop
         id={styles['bg-video']}
-        style={{ height: contentHeight ? contentHeight : '100vh'}}
         className="absolute top-0 z-0"
       >
         <source src="/videos/shark-boat-bg.mp4" type="video/mp4" />
       </video>
-      <div className="container absolute left-1/2 -translate-x-1/2 z-10 min-h-screen" ref={content}>
+      <div className="container absolute left-1/2 -translate-x-1/2 z-10 min-h-screen">
         <div className="grid grid-cols-12 gap-6 md:gap-2 min-h-screen pt-24 pb-14 md:p-0">
         <div className="col-span-12 md:col-span-5 my-auto md:order-last">
             <div
