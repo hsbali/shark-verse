@@ -2,6 +2,7 @@ import React from 'react';
 import Carousel from 'react-elastic-carousel';
 
 import styles from '../../styles/LandingPage.module.scss';
+import SidePattern from './SidePattern';
 
 const NewSharkSection = ({ width }) => {
   const items = [
@@ -23,45 +24,12 @@ const NewSharkSection = ({ width }) => {
       id={`${styles['sharks']}`}
       className={`${styles['bg-img']} min-h-screen w-full flex items-center relative`}
     >
-      <div
-        className="absolute left-0 bottom-0 z-20 h-full"
-        style={{
-          maxWidth: '500px',
-          width: `${Math.max(width - 500, 350)}px`,
-          minWidth: '350px',
-          overflow: 'hidden',
-        }}
-      >
-        <div className="relative h-full float-right" style={{ width: '500px' }}>
-          <img
-            src="/images/side-patterns/start-loop/1.png"
-            className="absolute right-0 h-full"
-            style={{ width: '500px' }}
-          />
-        </div>
-      </div>
-      <div
-        className="absolute right-0 bottom-0 z-20 h-full"
-        style={{
-          maxWidth: '500px',
-          width: `${Math.max(width - 500, 350)}px`,
-          minWidth: '350px',
-          overflow: 'hidden',
-        }}
-      >
-        <div className="relative h-full float-left" style={{ width: '500px' }}>
-          <img
-            src="/images/side-patterns/start-loop/2.png"
-            className="absolute h-full"
-            style={{ width: '500px' }}
-          />
-        </div>
-      </div>
+      <SidePattern imgPathLeft={'/images/side-patterns/start-loop/1.png'} imgPathRight={'/images/side-patterns/start-loop/2.png'} width={width} />
       <div className="text-white text-center md:w-2/3 mx-auto p-4 z-30">
         <h2 className="text-6xl font-semibold mb-14">
           Meet the new Sharks in Sea
         </h2>
-        <p className="text-xl text-sky-200 mb-14">
+        <p className="text-xl text-primary-200 mb-14">
           Meet the new Sharks who are ready to rule the OpenSea. It’s gonna be
           Awesome !!
         </p>
