@@ -34,16 +34,22 @@ body {
     color: white;
     box-shadow: none;
     &.rec-arrow-left {
-        &:disabled {
-            cursor: default;
-            opacity: 0.4;
-          }
+      &:focus-visible {
+        background: none;
+      }
+      &:disabled {
+        cursor: default;
+        opacity: 0.4;
+      }
       &:hover {
         box-shadow: none;
         background: none;
       }
     }
     &.rec-arrow-right {
+      &:focus-visible {
+        background: none;
+      }
       &:disabled {
         cursor: default;
         opacity: 0.4;
