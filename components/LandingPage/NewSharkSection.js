@@ -30,10 +30,10 @@ const NewSharkSection = ({ width }) => {
 				width={width}
 			/>
 			<div className="text-white text-center md:w-2/3 mx-auto p-4 py-24 z-30">
-				<h2 className="text-6xl font-semibold mb-14">
+				<h2 className="text-4xl md:text-6xl font-semibold mb-14">
 					Meet the new Sharks in Sea
 				</h2>
-				<p className="text-xl text-primary-200 mb-14">
+				<p className="md:text-xl text-primary-200 mb-14">
 					Meet the new Sharks who are ready to rule the OpenSea. It’s
 					gonna be Awesome !!
 				</p>

@@ -57,7 +57,7 @@ const RoadmapSection = ({ width, height }) => {
 	return (
 		<section
 			id={`${styles['roadmap']}`}
-			className={`w-full flex items-center relative`}
+			className={`w-full flex relative`}
 			style={{ height: `${100 * bgCount}vh` }}
 		>
 			<div className="absolute top-0 w-full">
@@ -119,7 +119,9 @@ const RoadmapSection = ({ width, height }) => {
 				className="text-white text-center md:w-2/3 mx-auto px-4 py-24 z-30"
 				ref={contentRef}
 			>
-				<h2 className="text-6xl font-semibold mb-14">Roadmap</h2>
+				<h2 className="text-4xl md:text-6xl font-semibold mb-14">
+					Roadmap
+				</h2>
 
 				<div className="w-4/5 mx-auto">
 					<div className="last-of-type:pb-0">
@@ -147,7 +149,7 @@ const RoadmapSection = ({ width, height }) => {
 								</div>
 							</Fragment>
 						))}
-						<h3 className="text-3xl text-left my-6 -translate-x-3 font-bold">
+						<h3 className="text-2xl md:text-3xl text-left my-6 -translate-x-3 font-bold">
 							Q1 2022 Milestone
 						</h3>
 						{roadmap1.map((el, i) => (

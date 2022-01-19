@@ -13,11 +13,11 @@ const AboutSection = ({ width }) => {
 				imgPathRight={'/images/side-patterns/start/2.png'}
 				width={width}
 			/>
-			<div className="text-white text-center md:w-2/3 mx-auto px-4 py-24 z-30">
-				<h2 className="text-6xl font-semibold mb-14">
+			<div className="text-white text-center md:w-2/3 mx-auto px-6 py-24 z-30">
+				<h2 className="text-4xl md:text-6xl font-semibold mb-14">
 					About SharkVerse
 				</h2>
-				<p className="text-xl mb-14">
+				<p className="md:text-xl md:mb-14">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 					do eiusmod tempor incididunt ut labore et dolore magna
 					aliqua. Consequat id porta nibh venenatis. Donec massa
@@ -32,19 +32,19 @@ const AboutSection = ({ width }) => {
 					lectus magna fringilla urna.
 				</p>
 				<div className="hidden md:flex flex-wrap justify-center gap-12">
-					<button className="bg-primary-main px-8 py-4 text-white rounded-md font-medium uppercase">
+					<button className="bg-primary-main px-8 py-4 text-white rounded-md font-medium uppercase hover:bg-primary-dark transition-all duration-100">
 						<div className="flex items-center gap-1">
 							<img src="/icons/opensea-white.png" width={25} />
 							<div className="hidden md:block">opensea</div>
 						</div>
 					</button>
-					<button className="bg-primary-main px-8 py-4 text-white rounded-md font-medium uppercase">
+					<button className="bg-primary-main px-8 py-4 text-white rounded-md font-medium uppercase hover:bg-primary-dark transition-all duration-100">
 						<div className="flex items-center gap-1">
 							<img src="/icons/discord-white.png" width={25} />
 							<div className="hidden md:block">discord</div>
 						</div>
 					</button>
-					<button className="bg-primary-main px-8 py-4 text-white rounded-md font-medium uppercase">
+					<button className="bg-primary-main px-8 py-4 text-white rounded-md font-medium uppercase hover:bg-primary-dark transition-all duration-100">
 						<div className="flex items-center gap-1">
 							<img src="/icons/twitter-white.png" width={25} />
 							<div className="hidden md:block">twitter</div>

@@ -1,10 +1,37 @@
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import { useTheme } from '@mui/system'
 import Link from 'next/link'
 
 import { Drawer } from '@mui/material'
 
 import { Close } from '@mui/icons-material'
+
+const navLinks = [
+	{
+		text: 'About',
+		link: '/#about',
+	},
+	{
+		text: 'Sharks',
+		link: '/#sharks',
+	},
+	{
+		text: 'Roadmap',
+		link: '/#roadmap',
+	},
+	{
+		text: 'Team',
+		link: '/#team',
+	},
+	{
+		text: 'FAQ',
+		link: '/#faq',
+	},
+	{
+		text: 'Mint',
+		link: '/#mint',
+	},
+]
 
 const SideDrawer = ({ open, onClose }) => {
 	const theme = useTheme()
@@ -26,28 +53,30 @@ const SideDrawer = ({ open, onClose }) => {
 					<Close size="large" />
 				</button>
 
-				<ul className="gap-4 uppercase text-lg flex flex-col text-primary-200 p-4 pt-12">
-					<li>
-						<a href="/#about">About</a>
-					</li>
-					<li>
-						<a href="/#sharks">Sharks</a>
-					</li>
-					<li>
-						<a href="/#roadmap">Roadmap</a>
-					</li>
-					<li>
-						<a href="/#team">Team</a>
-					</li>
-					<li>
-						<a href="/#faq">FAQ</a>
-					</li>
-					<li className="flex flex-col">
-						<small className="text-red-400 bottom-full font-medium text-xs">
-							Soon!
-						</small>
-						<a href="/#mint">Mint</a>
-					</li>
+				<ul className="gap-4 uppercase text-lg flex flex-col text-primary-200 p-4 pt-12 font-medium">
+					{navLinks.map((link, i) => {
+						return (
+							<Fragment key={i}>
+								{link.text !== 'Mint' ? (
+									<li>
+										<a href="/#faq">{link.text}</a>
+									</li>
+								) : (
+									<li className="flex flex-col">
+										<small className="translate-y-1 text-red-500 bottom-full right-0 font-medium text-xs">
+											Soon!
+										</small>
+										<a
+											className="text-primary-light"
+											href="/#mint"
+										>
+											Mint
+										</a>
+									</li>
+								)}
+							</Fragment>
+						)
+					})}
 				</ul>
 			</div>
 		</Drawer>
@@ -63,32 +92,32 @@ const Navbar = () => {
 			className="flex items-center justify-between fixed z-50 bg-primary-200/95 w-full p-4"
 		>
 			<div className="">
-				<ul className="items-center gap-12 uppercase hidden md:flex text-primary-dark">
-					<li>
-						<a href="/#about">About</a>
-					</li>
-					<li>
-						<a href="/#sharks">Sharks</a>
-					</li>
-					<li>
-						<a href="/#roadmap">Roadmap</a>
-					</li>
-					<li>
-						<a href="/#team">Team</a>
-					</li>
-					<li>
-						<a href="/#faq">FAQ</a>
-					</li>
-					<li>
-						<div className="relative">
-							<small className="absolute text-red-400 bottom-full right-0 font-medium text-xs">
-								Soon!
-							</small>
-							<a className="text-primary-light" href="/#mint">
-								Mint
-							</a>
-						</div>
-					</li>
+				<ul className="items-center lg:gap-12 md:gap-5 uppercase hidden md:flex text-primary-dark font-medium">
+					{navLinks.map((link, i) => {
+						return (
+							<Fragment key={i}>
+								{link.text !== 'Mint' ? (
+									<li>
+										<a href="/#faq">{link.text}</a>
+									</li>
+								) : (
+									<li>
+										<div className="relative">
+											<small className="absolute translate-y-2 text-red-500 bottom-full right-0 font-medium text-xs">
+												Soon!
+											</small>
+											<a
+												className="text-primary-light"
+												href="/#mint"
+											>
+												Mint
+											</a>
+										</div>
+									</li>
+								)}
+							</Fragment>
+						)
+					})}
 				</ul>
 				<div>
 					<button
@@ -123,7 +152,7 @@ const Navbar = () => {
 				</Link>
 			</div>
 			<div>
-				<button className="bg-primary-dark p-2 md:px-4 text-white rounded-md font-medium">
+				<button className="btn-wallet p-2 md:px-4 text-white rounded-md font-medium">
 					<div className="flex items-center gap-2">
 						<img src="/icons/wallet.svg" width={25} />
 						<div className="hidden md:block">Connect Wallet</div>
