@@ -4,17 +4,9 @@ import SidePattern from './SidePattern'
 import styles from '../../styles/LandingPage.module.scss'
 
 const RoadmapSection = ({ width, height }) => {
-	const getBgCount = () => {
-		if (Math.floor(contentHeight / height) + 0.5 < contentHeight / height) {
-			return Math.ceil(contentHeight / height)
-		} else {
-			return Math.floor(contentHeight / height)
-		}
-	}
-
-	const [bgCount, setBgCount] = useState(2)
+	const defaultBgCount = 2
+	const [bgCount, setBgCount] = useState(defaultBgCount)
 	const contentRef = useRef()
-	const [contentHeight, setContentHeight] = useState(1080)
 
 	const roadmap1 = [
 		{
@@ -50,8 +42,9 @@ const RoadmapSection = ({ width, height }) => {
 	]
 
 	useLayoutEffect(() => {
-		setContentHeight(contentRef.current.offsetHeight)
-		setBgCount(getBgCount())
+		if (!(contentRef.current.offsetHeight / height < defaultBgCount)) {
+			setBgCount(Math.ceil(contentRef.current.offsetHeight))
+		}
 	}, [width, height])
 
 	return (
@@ -116,7 +109,7 @@ const RoadmapSection = ({ width, height }) => {
 				</div>
 			</div>
 			<div
-				className="text-white text-center md:w-2/3 mx-auto px-4 py-24 z-30"
+				className="text-white text-center md:w-2/3 mx-auto px-4 z-30"
 				ref={contentRef}
 			>
 				<h2 className="text-4xl md:text-6xl font-semibold mb-14">
