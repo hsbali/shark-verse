@@ -1,18 +1,18 @@
 import { Fragment, useLayoutEffect, useRef, useState } from 'react'
-import Box from '@mui/material/Box'
-import Stepper from '@mui/material/Stepper'
-import Step from '@mui/material/Step'
-import StepLabel from '@mui/material/StepLabel'
-import StepContent from '@mui/material/StepContent'
-import Button from '@mui/material/Button'
-import Paper from '@mui/material/Paper'
-import Typography from '@mui/material/Typography'
 import SidePattern from './SidePattern'
 
 import styles from '../../styles/LandingPage.module.scss'
 
 const RoadmapSection = ({ width, height }) => {
-	const [bgCount, setBgCount] = useState(1)
+	const getBgCount = () => {
+		if (Math.floor(contentHeight / height) + 0.5 < contentHeight / height) {
+			return Math.ceil(contentHeight / height)
+		} else {
+			return Math.floor(contentHeight / height)
+		}
+	}
+
+	const [bgCount, setBgCount] = useState(2)
 	const contentRef = useRef()
 	const [contentHeight, setContentHeight] = useState(1080)
 
@@ -51,13 +51,13 @@ const RoadmapSection = ({ width, height }) => {
 
 	useLayoutEffect(() => {
 		setContentHeight(contentRef.current.offsetHeight)
-		setBgCount(Math.ceil(contentHeight / height))
+		setBgCount(getBgCount())
 	}, [width, height])
 
 	return (
 		<section
 			id="roadmap"
-			className={`w-full flex relative`}
+			className={`w-full flex items-center relative`}
 			style={{ height: `${100 * bgCount}vh` }}
 		>
 			<div className="absolute top-0 w-full">
@@ -116,7 +116,7 @@ const RoadmapSection = ({ width, height }) => {
 				</div>
 			</div>
 			<div
-				className="text-white text-center md:w-2/3 mx-auto px-4 py-24 pt-40 md:pt-32 z-30"
+				className="text-white text-center md:w-2/3 mx-auto px-4 py-24 z-30"
 				ref={contentRef}
 			>
 				<h2 className="text-4xl md:text-6xl font-semibold mb-14">

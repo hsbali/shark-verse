@@ -14,27 +14,28 @@ const HeroSection = ({ width }) => {
 	return (
 		<section
 			id="home"
-			className={`${styles['home']} min-h-screen w-100 relative`}
+			className={`${styles['home']} min-h-screen w-full relative`}
 		>
-			<div style={{ height: `${contentHeight}px` }}>
+			<div style={{ height: `${contentHeight}px`}} className="w-full overflow-x-hidden">
 				<video
 					muted
 					autoPlay
 					loop
 					id={styles['bg-video']}
-					className="absolute top-0 z-0"
+					className="absolute bottom-0 z-0"
+					style={{ transform: 'scaleX(1)'}}
 				>
 					<source src="/videos/shark-boat-bg.mp4" type="video/mp4" />
 				</video>
 			</div>
 			<div
-				className="container absolute left-1/2 -translate-x-1/2 z-10 min-h-screen top-0"
+				className="container lg:w-11/12 absolute left-1/2 -translate-x-1/2 z-10 min-h-screen top-0"
 				ref={contentRef}
 			>
 				<div className="grid grid-cols-12 gap-6 md:gap-2 min-h-screen pt-24 pb-14 md:p-0">
 					<div className="col-span-12 md:col-span-5 my-auto md:order-last">
 						<div
-							className={`${styles['bg-glass']} flex flex-col p-4 rounded-lg w-5/6 mx-auto hidden md:block`}
+							className={`${styles['bg-glass']} flex flex-col p-4 rounded-lg w-5/6 ml-auto hidden md:block`}
 						>
 							<img
 								src="/images/shark-gif.gif"

@@ -2,7 +2,10 @@
 	& #bg-video {
 		height: 100%;
 		width: 100%;
-		object-fit: fill;
+		object-fit: cover;
+		@media (min-width: 768px) {
+			object-fit: fill;
+		}
 	}
 
 	& .bg-glass {
