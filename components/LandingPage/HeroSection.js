@@ -16,14 +16,17 @@ const HeroSection = ({ width }) => {
 			id="home"
 			className={`${styles['home']} min-h-screen w-full relative`}
 		>
-			<div style={{ height: `${contentHeight}px`}} className="w-full overflow-x-hidden">
+			<div
+				style={{ height: `${contentHeight}px` }}
+				className="w-full overflow-x-hidden"
+			>
 				<video
 					muted
 					autoPlay
 					loop
 					id={styles['bg-video']}
 					className="absolute bottom-0 z-0"
-					style={{ transform: 'scaleX(1)'}}
+					style={{ transform: 'scaleX(1)' }}
 				>
 					<source src="/videos/shark-boat-bg.mp4" type="video/mp4" />
 				</video>
