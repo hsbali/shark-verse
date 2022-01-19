@@ -13,7 +13,7 @@ const HeroSection = ({ width }) => {
 
 	return (
 		<section
-			id='home'
+			id="home"
 			className={`${styles['home']} min-h-screen w-100 relative`}
 		>
 			<div style={{ height: `${contentHeight}px` }}>

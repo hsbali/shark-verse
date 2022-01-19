@@ -5,7 +5,7 @@ import styles from '../../styles/LandingPage.module.scss'
 const TeamSection = ({ width }) => {
 	return (
 		<section
-			id='team'
+			id="team"
 			className={`${styles['team-bg-img']} min-h-screen w-full flex items-center relative`}
 		>
 			<SidePattern

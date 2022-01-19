@@ -5,7 +5,7 @@ import styles from '../../styles/LandingPage.module.scss'
 const AboutSection = ({ width }) => {
 	return (
 		<section
-			id='about'
+			id="about"
 			className={`${styles['about-bg-img']} min-h-screen w-full flex items-center relative`}
 		>
 			<SidePattern

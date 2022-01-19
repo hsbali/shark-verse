@@ -56,7 +56,7 @@ const RoadmapSection = ({ width, height }) => {
 
 	return (
 		<section
-			id='roadmap'
+			id="roadmap"
 			className={`w-full flex relative`}
 			style={{ height: `${100 * bgCount}vh` }}
 		>
