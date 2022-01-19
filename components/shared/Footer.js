@@ -158,7 +158,7 @@ const Footer = ({ width }) => {
 				imgPathRight={'/images/side-patterns/end/2.png'}
 				width={width}
 			/>
-			<div className="text-white text-center md:w-2/3 mx-auto px-4 pt-24 pb-12 z-30">
+			<div id='faq' className="text-white text-center md:w-2/3 mx-auto px-4 pt-24 pb-12 z-30">
 				<h2 className="text-6xl font-semibold mb-14">FAQ</h2>
 				<div>
 					<Accordion

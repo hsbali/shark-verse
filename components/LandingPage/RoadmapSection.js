@@ -56,7 +56,7 @@ const RoadmapSection = ({ width, height }) => {
 
 	return (
 		<section
-			id={`${styles['roadmap']}`}
+			id='roadmap'
 			className={`w-full flex relative`}
 			style={{ height: `${100 * bgCount}vh` }}
 		>
@@ -70,7 +70,7 @@ const RoadmapSection = ({ width, height }) => {
 									{i + 1 !== bgCount ? (
 										<>
 											<div
-												className={`${styles['bg-img1']} h-screen w-full`}
+												className={`${styles['roadmap-bg-img1']} h-screen w-full`}
 											>
 												<SidePattern
 													imgPathLeft={
@@ -95,7 +95,7 @@ const RoadmapSection = ({ width, height }) => {
 									) : (
 										<>
 											<div
-												className={`${styles['bg-img2']} h-screen w-full`}
+												className={`${styles['roadmap-bg-img2']} h-screen w-full`}
 											>
 												<SidePattern
 													imgPathLeft={
@@ -116,7 +116,7 @@ const RoadmapSection = ({ width, height }) => {
 				</div>
 			</div>
 			<div
-				className="text-white text-center md:w-2/3 mx-auto px-4 py-24 z-30"
+				className="text-white text-center md:w-2/3 mx-auto px-4 py-24 pt-40 md:pt-32 z-30"
 				ref={contentRef}
 			>
 				<h2 className="text-4xl md:text-6xl font-semibold mb-14">

@@ -1,4 +1,4 @@
-#hero-section {
+.home {
 	& #bg-video {
 		height: 100%;
 		width: 100%;
@@ -14,42 +14,37 @@
 	}
 }
 
-#about {
-	&.bg-img {
+.about-bg-img {
 		background-image: url('/images/backgrounds/bg-blue-2.png');
 		background-position: center;
 		background-size: cover;
 	}
-}
 
-#roadmap {
-	& .bg-img1 {
+
+	.roadmap-bg-img1 {
 		background-image: url('/images/backgrounds/bg-blue.png');
 		background-position: center;
 		background-size: cover;
 	}
-	& .bg-img2 {
+	.roadmap-bg-img2 {
 		background-image: url('/images/backgrounds/bg-blue-2.png');
 		background-position: center;
 		background-size: cover;
 	}
-}
 
-#sharks {
-	&.bg-img {
+
+	.shark-bg-img {
 		background-image: url('/images/backgrounds/bg-dark.png');
 		background-position: center;
 		background-size: cover;
 	}
-}
 
-#team {
-	&.bg-img {
+
+	.team-bg-img {
 		background-image: url('/images/backgrounds/bg-dark.png');
 		background-position: center;
 		background-size: cover;
 	}
-}
 
 #footer {
 	background-color: #191919;

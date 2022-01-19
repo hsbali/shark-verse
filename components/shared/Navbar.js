@@ -56,10 +56,10 @@ const SideDrawer = ({ open, onClose }) => {
 				<ul className="gap-4 uppercase text-lg flex flex-col text-primary-200 p-4 pt-12 font-medium">
 					{navLinks.map((link, i) => {
 						return (
-							<Fragment key={i}>
+							<div onClick={onClose} key={i}>
 								{link.text !== 'Mint' ? (
 									<li>
-										<a href="/#faq">{link.text}</a>
+										<a href={link.link}>{link.text}</a>
 									</li>
 								) : (
 									<li className="flex flex-col">
@@ -74,7 +74,7 @@ const SideDrawer = ({ open, onClose }) => {
 										</a>
 									</li>
 								)}
-							</Fragment>
+							</div>
 						)
 					})}
 				</ul>
@@ -98,7 +98,7 @@ const Navbar = () => {
 							<Fragment key={i}>
 								{link.text !== 'Mint' ? (
 									<li>
-										<a href="/#faq">{link.text}</a>
+										<a href={link.link}>{link.text}</a>
 									</li>
 								) : (
 									<li>

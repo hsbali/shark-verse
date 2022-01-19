@@ -21,8 +21,8 @@ const NewSharkSection = ({ width }) => {
 
 	return (
 		<section
-			id={`${styles['sharks']}`}
-			className={`${styles['bg-img']} min-h-screen w-full flex items-center relative`}
+			id='sharks'
+			className={`${styles['shark-bg-img']} min-h-screen w-full flex items-center relative`}
 		>
 			<SidePattern
 				imgPathLeft={'/images/side-patterns/start-loop/1.png'}

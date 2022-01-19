@@ -13,8 +13,8 @@ const HeroSection = ({ width }) => {
 
 	return (
 		<section
-			id={styles['hero-section']}
-			className={`${styles['bg-img']} min-h-screen w-100 relative`}
+			id='home'
+			className={`${styles['home']} min-h-screen w-100 relative`}
 		>
 			<div style={{ height: `${contentHeight}px` }}>
 				<video

@@ -5,8 +5,8 @@ import styles from '../../styles/LandingPage.module.scss'
 const TeamSection = ({ width }) => {
 	return (
 		<section
-			id={`${styles['team']}`}
-			className={`${styles['bg-img']} min-h-screen w-full flex items-center relative`}
+			id='team'
+			className={`${styles['team-bg-img']} min-h-screen w-full flex items-center relative`}
 		>
 			<SidePattern
 				imgPathLeft={'/images/side-patterns/loop/1.png'}
