@@ -42,15 +42,13 @@ const RoadmapSection = ({ width, height }) => {
 	]
 
 	useLayoutEffect(() => {
-		if (!(contentRef.current.offsetHeight / height < defaultBgCount)) {
-			setBgCount(Math.ceil(contentRef.current.offsetHeight))
-		}
+		setBgCount(Math.ceil(contentRef.current.offsetHeight / height))
 	}, [width, height])
 
 	return (
 		<section
 			id="roadmap"
-			className={`w-full flex items-center relative`}
+			className={`w-full flex flex-col relative`}
 			style={{ height: `${100 * bgCount}vh` }}
 		>
 			<div className="absolute top-0 w-full">
@@ -109,7 +107,7 @@ const RoadmapSection = ({ width, height }) => {
 				</div>
 			</div>
 			<div
-				className="text-white text-center md:w-2/3 mx-auto px-4 z-30"
+				className="text-white text-center md:w-2/3 mx-auto px-4 py-32 z-30 h-auto"
 				ref={contentRef}
 			>
 				<h2 className="text-4xl md:text-6xl font-semibold mb-14">
