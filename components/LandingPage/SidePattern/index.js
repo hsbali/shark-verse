@@ -15,7 +15,7 @@ const SidePattern = ({ imgPathLeft, imgPathRight, width, height }) => {
 					maxWidth: '500px',
 					width: `${patternWidth}px`,
 					height: height ? height : '100%',
-					minWidth: '350px',
+					minWidth: '300px',
 					overflow: 'hidden',
 				}}
 			>
@@ -40,7 +40,7 @@ const SidePattern = ({ imgPathLeft, imgPathRight, width, height }) => {
 					maxWidth: '500px',
 					width: `${patternWidth}px`,
 					height: height ? height : '100%',
-					minWidth: '350px',
+					minWidth: '300px',
 					overflow: 'hidden',
 				}}
 			>

@@ -43,7 +43,7 @@ const RoadmapSection = ({ width, height }) => {
 
 	useLayoutEffect(() => {
 		setBgCount(Math.ceil(contentRef.current.offsetHeight / height))
-	}, [width, height])
+	}, [width])
 
 	return (
 		<section
@@ -58,23 +58,24 @@ const RoadmapSection = ({ width, height }) => {
 						.map((el, i) => {
 							return (
 								<Fragment key={i}>
-									{i + 1 !== bgCount ? (
-										<>
-											<div
-												className={`${styles['roadmap-bg-img1']} h-screen w-full`}
-											>
-												<SidePattern
-													imgPathLeft={
-														'/images/side-patterns/loop/1.png'
-													}
-													imgPathRight={
-														'/images/side-patterns/loop/2.png'
-													}
-													width={width}
-													height={'100vh'}
-												/>
-											</div>
+									<>
+										<div
+											className={`${styles['roadmap-bg-img1']} h-screen w-full`}
+										>
+											<SidePattern
+												imgPathLeft={
+													'/images/side-patterns/loop/1.png'
+												}
+												imgPathRight={
+													'/images/side-patterns/loop/2.png'
+												}
+												width={width}
+												height={'100vh'}
+											/>
+										</div>
+										{i < bgCount - 1 ? (
 											<div className="relative">
+												{console.log('group')}
 												<div className="absolute top-1/2 -translate-y-1/2 w-full z-10">
 													<img
 														src="/images/connectors/blue-blue.png"
@@ -82,32 +83,17 @@ const RoadmapSection = ({ width, height }) => {
 													/>
 												</div>
 											</div>
-										</>
-									) : (
-										<>
-											<div
-												className={`${styles['roadmap-bg-img2']} h-screen w-full`}
-											>
-												<SidePattern
-													imgPathLeft={
-														'/images/side-patterns/loop/1.png'
-													}
-													imgPathRight={
-														'/images/side-patterns/loop/2.png'
-													}
-													width={width}
-													height={'100vh'}
-												/>
-											</div>
-										</>
-									)}
+										) : (
+											''
+										)}
+									</>
 								</Fragment>
 							)
 						})}
 				</div>
 			</div>
 			<div
-				className="text-white text-center md:w-2/3 mx-auto px-4 py-32 z-30 h-auto"
+				className="text-white text-center md:w-2/3 mx-auto px-4 py-32 z-30"
 				ref={contentRef}
 			>
 				<h2 className="text-4xl md:text-6xl font-semibold mb-14">
