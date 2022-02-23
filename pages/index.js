@@ -19,7 +19,7 @@ export default function Home() {
 			<main>
 				<HeroSection width={width} />
 				<div className="relative">
-					<div className="absolute w-full z-10">
+					<div className="absolute top-0 w-full z-10">
 						<img
 							src="/images/connectors/lightblue-lightblue.png"
 							className="w-full"
