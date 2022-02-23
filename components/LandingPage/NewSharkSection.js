@@ -2,6 +2,7 @@ import React from 'react'
 import Carousel from 'react-elastic-carousel'
 
 import styles from '../../styles/LandingPage.module.scss'
+import { FadeInScale, FadeInUp } from '../animations/Fade'
 import SidePattern from './SidePattern'
 
 const NewSharkSection = ({ width }) => {
@@ -30,26 +31,32 @@ const NewSharkSection = ({ width }) => {
 				width={width}
 			/>
 			<div className="text-white text-center md:w-2/3 mx-auto p-4 py-24 z-30">
-				<h2 className="text-4xl md:text-6xl font-semibold mb-14">
-					Meet the new Sharks in Sea
-				</h2>
-				<p className="md:text-xl text-primary-200 mb-14">
-					Meet the new Sharks who are ready to rule the OpenSea. It’s
-					gonna be Awesome !!
-				</p>
-				<Carousel
-					itemsToShow={4}
-					itemsToScroll={1}
-					breakPoints={carouselBreakpoints}
-				>
-					{items.map((item) => {
-						return (
-							<div className="mx-1" key={item.id}>
-								<img src={item.imgPath} />
-							</div>
-						)
-					})}
-				</Carousel>
+				<FadeInUp>
+					<h2 className="text-4xl md:text-6xl font-semibold mb-14">
+						Meet the new Sharks in Sea
+					</h2>
+				</FadeInUp>
+				<FadeInUp transition={{ delay: 0.15 }}>
+					<p className="md:text-xl text-primary-200 mb-14">
+						Meet the new Sharks who are ready to rule the OpenSea. It’s
+						gonna be Awesome !!
+					</p>
+				</FadeInUp>
+					<FadeInScale transition={{ delay: 0.3 }}>
+						<Carousel
+							itemsToShow={4}
+							itemsToScroll={1}
+							breakPoints={carouselBreakpoints}
+						>
+							{items.map((item) => {
+								return (
+									<div className="mx-1" key={item.id}>
+										<img src={item.imgPath} />
+									</div>
+								)
+							})}
+						</Carousel>
+					</FadeInScale>
 			</div>
 		</section>
 	)

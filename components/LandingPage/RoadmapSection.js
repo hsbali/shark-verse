@@ -2,6 +2,7 @@ import { Fragment, useLayoutEffect, useRef, useState } from 'react'
 import SidePattern from './SidePattern'
 
 import styles from '../../styles/LandingPage.module.scss'
+import { FadeInUp } from '../animations/Fade'
 
 const RoadmapSection = ({ width, height }) => {
 	const defaultBgCount = 2
@@ -96,61 +97,69 @@ const RoadmapSection = ({ width, height }) => {
 				className="text-white text-center md:w-2/3 mx-auto px-4 py-32 z-30"
 				ref={contentRef}
 			>
-				<h2 className="text-4xl md:text-6xl font-semibold mb-14">
-					Roadmap
-				</h2>
+				<FadeInUp>
+					<h2 className="text-4xl md:text-6xl font-semibold mb-14">
+						Roadmap
+					</h2>
+				</FadeInUp>
 
 				<div className="w-4/5 mx-auto">
 					<div className="last-of-type:pb-0">
 						{roadmap1.map((el, i) => (
 							<Fragment key={i}>
-								<div className="text-left pl-10 border-l-2 pb-10 last-of-type:pb-0 border-primary-200 relative">
-									<div
-										className="absolute left-0 h-full -translate-x-1/2 bg-primary-dark blur-xs rounded-full"
-										style={{
-											width: '25px',
-											height: '25px',
-										}}
-									></div>
-									<div className="absolute left-0 -translate-x-1/2 -translate-y-3 overflow-hidden">
-										<img
-											src={el.iconPath}
-											alt="milestone"
-											className="w-9/12 mx-auto"
-										/>
-									</div>
-									<h4 className="text-xl font-medium">
-										{el.title}
-									</h4>
-									{el.body}
-								</div>
+									<FadeInUp transition={{ delay: 0.15 * i }} className="pb-10 last-of-type:pb-0 border-l-2 border-primary-200">
+										<div className="text-left pl-10 relative">
+											<div
+												className="absolute left-0 h-full -translate-x-1/2 bg-primary-dark/95 blur-xs rounded-full"
+												style={{
+													width: '24px',
+													height: '24px',
+												}}
+											></div>
+											<div className="absolute left-0 -translate-x-1/2 -translate-y-3.5 overflow-hidden">
+												<img
+													src={el.iconPath}
+													alt="milestone"
+													className="w-9/12 mx-auto"
+												/>
+											</div>
+											<h4 className="text-xl font-medium">
+												{el.title}
+											</h4>
+											{el.body}
+										</div>
+									</FadeInUp>
 							</Fragment>
 						))}
+						<FadeInUp transition={{ delay: 0.15 * 3}}>
 						<h3 className="text-2xl md:text-3xl text-left my-6 -translate-x-3 font-bold">
 							Q1 2022 Milestone
 						</h3>
+						</FadeInUp>
 						{roadmap1.map((el, i) => (
 							<Fragment key={i}>
-								<div className="text-left pl-10 border-l-2 pb-10 last-of-type:pb-0 border-primary-200 relative">
-									<div
-										className="absolute left-0 h-full -translate-x-1/2 bg-primary-dark blur-xs rounded-full"
-										style={{
-											width: '25px',
-											height: '25px',
-										}}
-									></div>
-									<div className="absolute left-0 -translate-x-1/2 -translate-y-3 overflow-hidden">
-										<img
-											src={el.iconPath}
-											alt="milestone"
-											className="w-9/12 mx-auto"
-										/>
-									</div>
-									<h4 className="text-xl font-medium">
-										{el.title}
-									</h4>
-									{el.body}
-								</div>
+									<FadeInUp transition={{ delay: 0.15 * (i + 4) }} className="pb-10 last-of-type:pb-0 border-l-2 border-primary-200">
+										<div className="text-left pl-10 relative">
+											<div
+												className="absolute left-0 h-full -translate-x-1/2 bg-primary-dark blur-xs rounded-full"
+												style={{
+													width: '24px',
+													height: '24px',
+												}}
+											></div>
+											<div className="absolute left-0 -translate-x-1/2 -translate-y-3.5 overflow-hidden">
+												<img
+													src={el.iconPath}
+													alt="milestone"
+													className="w-9/12 mx-auto"
+												/>
+											</div>
+											<h4 className="text-xl font-medium">
+												{el.title}
+											</h4>
+											{el.body}
+										</div>
+									</FadeInUp>
 							</Fragment>
 						))}
 					</div>

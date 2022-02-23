@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 
 import styles from '../../styles/LandingPage.module.scss'
+import { FadeIn, FadeInRight, FadeInUp } from '../animations/Fade'
 
 const HeroSection = ({ width }) => {
 	const contentRef = useRef()
@@ -37,107 +38,123 @@ const HeroSection = ({ width }) => {
 			>
 				<div className="grid grid-cols-12 gap-6 md:gap-2 min-h-screen pt-24 pb-14 md:p-0">
 					<div className="col-span-12 md:col-span-5 my-auto md:order-last">
-						<div
-							className={`${styles['bg-glass']} flex flex-col p-4 rounded-lg w-5/6 ml-auto hidden md:block`}
-						>
-							<img
-								src="/images/shark-gif.gif"
-								className="rounded-lg"
-							/>
-						</div>
-						<div className="md:hidden w-5/6 mx-auto">
-							<img
-								src="/images/shark-gif.gif"
-								className="rounded-lg"
-							/>
-						</div>
+						<FadeIn>
+							<div
+								className={`${styles['bg-glass']} flex flex-col p-4 rounded-lg w-5/6 ml-auto hidden md:block`}
+							>
+								<img
+									src="/images/shark-gif.gif"
+									className="rounded-lg"
+								/>
+							</div>
+							<div className="md:hidden w-5/6 mx-auto">
+								<img
+									src="/images/shark-gif.gif"
+									className="rounded-lg"
+								/>
+							</div>
+						</FadeIn>
 					</div>
 					<div className="col-span-12 md:col-span-7 my-auto">
-						<div
-							className={`${styles['bg-glass']} flex flex-col px-4 py-6 rounded-lg w-5/6 mx-auto block md:hidden text-center md:text-left items-center md:items-start`}
-						>
-							<h1 className="text-4xl text-primary-dark font-extrabold">
-								Shark<span className="font-normal">Verse</span>
-							</h1>
-							<p className="text-xl md:w-5/6 my-8 text-primary-dark">
-								Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit. lorem ipsum dolor sit amet,
-								consectetur adipiscing elit.{' '}
-							</p>
-							<div className="flex gap-6">
-								<div className="">
-									<Link href="/#" passHref>
-										<img src="/icons/instagram.svg" />
-									</Link>
-								</div>
-								<div>
-									<Link href="/#" passHref>
-										<img src="/icons/twitter.svg" />
-									</Link>
-								</div>
-								<div>
-									<Link href="/#" passHref>
-										<img src="/icons/opensea.svg" />
-									</Link>
-								</div>
-								<div>
-									<Link href="/#" passHref>
-										<img src="/icons/discord.svg" />
-									</Link>
-								</div>
-								<div>
-									<Link href="/#" passHref>
-										<img src="/icons/telegram.svg" />
-									</Link>
-								</div>
-								<div>
-									<Link href="/#" passHref>
-										<img src="/icons/reddit.svg" />
-									</Link>
-								</div>
+						<FadeIn>
+							<div
+								className={`${styles['bg-glass']} flex flex-col px-4 py-6 rounded-lg w-5/6 mx-auto block md:hidden text-center md:text-left items-center md:items-start`}
+							>
+								<FadeInUp>
+									<h1 className="text-4xl text-primary-dark font-extrabold">
+										Shark<span className="font-normal">Verse</span>
+									</h1>
+								</FadeInUp>
+								<FadeInUp transition={{ delay: 0.15 }}>
+									<p className="text-xl md:w-5/6 my-8 text-primary-dark">
+										Lorem ipsum dolor sit amet, consectetur
+										adipiscing elit. lorem ipsum dolor sit amet,
+										consectetur adipiscing elit.{' '}
+									</p>
+								</FadeInUp>
+								<FadeInUp transition={{ delay: 0.15 }}>
+									<div className="flex gap-6">
+										<div className="">
+											<Link href="/#" passHref>
+												<img src="/icons/instagram.svg" />
+											</Link>
+										</div>
+										<div>
+											<Link href="/#" passHref>
+												<img src="/icons/twitter.svg" />
+											</Link>
+										</div>
+										<div>
+											<Link href="/#" passHref>
+												<img src="/icons/opensea.svg" />
+											</Link>
+										</div>
+										<div>
+											<Link href="/#" passHref>
+												<img src="/icons/discord.svg" />
+											</Link>
+										</div>
+										<div>
+											<Link href="/#" passHref>
+												<img src="/icons/telegram.svg" />
+											</Link>
+										</div>
+										<div>
+											<Link href="/#" passHref>
+												<img src="/icons/reddit.svg" />
+											</Link>
+										</div>
+									</div>
+								</FadeInUp>
 							</div>
-						</div>
+						</FadeIn>
 						<div className="hidden md:block">
-							<h1 className="text-7xl font-extrabold text-primary-dark">
-								Shark<span className="font-normal">Verse</span>
-							</h1>
-							<p className="text-xl md:w-5/6 my-6 text-primary-dark">
-								Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit. lorem ipsum dolor sit amet,
-								consectetur adipiscing elit.{' '}
-							</p>
-							<div className="flex gap-6">
-								<div className="">
-									<Link href="/#" passHref>
-										<img src="/icons/instagram.svg" />
-									</Link>
+							<FadeInRight>
+								<h1 className="text-7xl font-extrabold text-primary-dark">
+									Shark<span className="font-normal">Verse</span>
+								</h1>
+							</FadeInRight>
+							<FadeInRight transition={{ delay: 0.15 }}>
+								<p className="text-xl md:w-5/6 my-6 text-primary-dark">
+									Lorem ipsum dolor sit amet, consectetur
+									adipiscing elit. lorem ipsum dolor sit amet,
+									consectetur adipiscing elit.{' '}
+								</p>
+							</FadeInRight>
+							<FadeInRight transition={{ delay: 0.3 }}>
+								<div className="flex gap-6">
+									<div className="">
+										<Link href="/#" passHref>
+											<img src="/icons/instagram.svg" />
+										</Link>
+									</div>
+									<div>
+										<Link href="/#" passHref>
+											<img src="/icons/twitter.svg" />
+										</Link>
+									</div>
+									<div>
+										<Link href="/#" passHref>
+											<img src="/icons/opensea.svg" />
+										</Link>
+									</div>
+									<div>
+										<Link href="/#" passHref>
+											<img src="/icons/discord.svg" />
+										</Link>
+									</div>
+									<div>
+										<Link href="/#" passHref>
+											<img src="/icons/telegram.svg" />
+										</Link>
+									</div>
+									<div>
+										<Link href="/#" passHref>
+											<img src="/icons/reddit.svg" />
+										</Link>
+									</div>
 								</div>
-								<div>
-									<Link href="/#" passHref>
-										<img src="/icons/twitter.svg" />
-									</Link>
-								</div>
-								<div>
-									<Link href="/#" passHref>
-										<img src="/icons/opensea.svg" />
-									</Link>
-								</div>
-								<div>
-									<Link href="/#" passHref>
-										<img src="/icons/discord.svg" />
-									</Link>
-								</div>
-								<div>
-									<Link href="/#" passHref>
-										<img src="/icons/telegram.svg" />
-									</Link>
-								</div>
-								<div>
-									<Link href="/#" passHref>
-										<img src="/icons/reddit.svg" />
-									</Link>
-								</div>
-							</div>
+							</FadeInRight>
 						</div>
 					</div>
 				</div>

@@ -12,6 +12,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import SidePattern from './../LandingPage/SidePattern'
 
 import styles from '../../styles/LandingPage.module.scss'
+import { FadeInScale, FadeInUp } from '../animations/Fade'
 
 const FooterNav = () => {
 	return (
@@ -162,47 +163,51 @@ const Footer = ({ width }) => {
 				id="faq"
 				className="text-white text-center md:w-2/3 mx-auto px-4 pt-24 pb-12 z-30"
 			>
-				<h2 className="text-6xl font-semibold mb-14">FAQ</h2>
-				<div>
-					<Accordion
-						expanded={expanded === 'panel1'}
-						onChange={handleChange('panel1')}
-					>
-						<AccordionSummary
-							expandIcon={<ExpandMoreIcon />}
-							aria-controls="panel1bh-content"
-							id="panel1bh-header"
+				<FadeInUp>
+					<h2 className="text-6xl font-semibold mb-14">FAQ</h2>
+				</FadeInUp>
+				<FadeInScale>
+					<div>
+						<Accordion
+							expanded={expanded === 'panel1'}
+							onChange={handleChange('panel1')}
 						>
-							<Typography>I am an accordion</Typography>
-						</AccordionSummary>
-						<AccordionDetails>
-							<Typography align="left">
-								Nulla facilisi. Phasellus sollicitudin nulla et
-								quam mattis feugiat. Aliquam eget maximus est,
-								id dignissim quam.
-							</Typography>
-						</AccordionDetails>
-					</Accordion>
-					<Accordion
-						expanded={expanded === 'panel2'}
-						onChange={handleChange('panel2')}
-					>
-						<AccordionSummary
-							expandIcon={<ExpandMoreIcon />}
-							aria-controls="panel1bh-content"
-							id="panel1bh-header"
+							<AccordionSummary
+								expandIcon={<ExpandMoreIcon />}
+								aria-controls="panel1bh-content"
+								id="panel1bh-header"
+							>
+								<Typography>I am an accordion</Typography>
+							</AccordionSummary>
+							<AccordionDetails>
+								<Typography align="left">
+									Nulla facilisi. Phasellus sollicitudin nulla et
+									quam mattis feugiat. Aliquam eget maximus est,
+									id dignissim quam.
+								</Typography>
+							</AccordionDetails>
+						</Accordion>
+						<Accordion
+							expanded={expanded === 'panel2'}
+							onChange={handleChange('panel2')}
 						>
-							<Typography>I am an accordion</Typography>
-						</AccordionSummary>
-						<AccordionDetails>
-							<Typography align="left">
-								Nulla facilisi. Phasellus sollicitudin nulla et
-								quam mattis feugiat. Aliquam eget maximus est,
-								id dignissim quam.
-							</Typography>
-						</AccordionDetails>
-					</Accordion>
-				</div>
+							<AccordionSummary
+								expandIcon={<ExpandMoreIcon />}
+								aria-controls="panel1bh-content"
+								id="panel1bh-header"
+							>
+								<Typography>I am an accordion</Typography>
+							</AccordionSummary>
+							<AccordionDetails>
+								<Typography align="left">
+									Nulla facilisi. Phasellus sollicitudin nulla et
+									quam mattis feugiat. Aliquam eget maximus est,
+									id dignissim quam.
+								</Typography>
+							</AccordionDetails>
+						</Accordion>
+					</div>
+				</FadeInScale>
 			</div>
 			<FooterNav />
 		</footer>
